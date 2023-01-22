@@ -1,4 +1,4 @@
-name: Build
+name: Build APK armeabi-v7a-debug
 on: workflow_dispatch
 
 jobs:
