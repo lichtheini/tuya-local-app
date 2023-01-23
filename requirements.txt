@@ -1,0 +1,5 @@
+#
+tinytuya            # Python API for Tuya WiFi smart devices using a direct local area network (LAN) 
+pycryptodome        # Encryption - AES can also be provided via PyCrypto or pyaes
+requests            # Used for Setup Wizard - Tuya IoT Platform calls
+colorama            # Makes ANSI escape character sequences work under MS Windows.
