@@ -6,6 +6,9 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 
+import tinytuya
+from tinytuya.Contrib import SocketDevice
+
 kv = """
 Screen:
     in_class: text
@@ -29,11 +32,18 @@ Screen:
         pos_hint: {'center_x': 0.5, 'center_y': 0.3}
         on_press:
             app.auth()
+
+    MDRectangleFlatButton:
+        id: powerstate
+        text: 'activate'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        on_press:
+            app.setup()
             
     MDLabel:
         text: ''
         id: show
-        pos_hint: {'center_x': 1.0, 'center_y': 0.2}
+        pos_hint: {'center_x': 1.0, 'center_y': 0.1}
 """
 
 
@@ -50,6 +60,19 @@ class Main(MDApp):
         else:
             label = self.root.ids.show
             label.text = "Fail"
+
+    def setup(self):
+        label = self.root.ids.show
+        label.text = "loading tinytuya"
+
+        label.text = "create device"
+        d = SocketDevice("bf6823916bed4f2286tyne", "192.168.178.34", "dcacc24203cb84d0")
+        d.set_version(3.4)
+        
+        label.text = "update status"
+        d.status()
+
+        label.text = "Status: " + str(d.get_state()['on'])
 
 
 Main().run()
