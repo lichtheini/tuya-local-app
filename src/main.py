@@ -6,8 +6,13 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 
+
 import tinytuya
 from tinytuya.Contrib import SocketDevice
+
+import os
+
+
 
 kv = """
 Screen:
@@ -73,6 +78,14 @@ class Main(MDApp):
         d.status()
 
         label.text = "Status: " + str(d.get_state()['on'])
+
+    def on_start(self):
+        from kivy import platform
+        if platform == "android":
+            from android.permissions import request_permissions, Permission
+            request_permissions([Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE])
+
+
 
 
 Main().run()
