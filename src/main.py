@@ -7,8 +7,8 @@ from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 
 
-import tinytuya
-from tinytuya.Contrib import SocketDevice
+#import tinytuya
+#from tinytuya.Contrib import SocketDevice
 
 import os
 
@@ -71,13 +71,13 @@ class Main(MDApp):
         label.text = "loading tinytuya"
 
         label.text = "create device"
-        d = SocketDevice("bf6823916bed4f2286tyne", "192.168.178.34", "dcacc24203cb84d0")
-        d.set_version(3.4)
+#        d = SocketDevice("bf6823916bed4f2286tyne", "192.168.178.34", "dcacc24203cb84d0")
+#        d.set_version(3.4)
         
-        label.text = "update status"
-        d.status()
+#        label.text = "update status"
+#        d.status()
 
-        label.text = "Status: " + str(d.get_state()['on'])
+#        label.text = "Status: " + str(d.get_state()['on'])
 
     def on_start(self):
         from kivy import platform
