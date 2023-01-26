@@ -82,8 +82,10 @@ class Main(MDApp):
     def on_start(self):
         from kivy import platform
         if platform == "android":
-            from android.permissions import request_permissions, Permission
-            request_permissions([Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE])
+            label = self.root.ids.show
+            label.text = "detected android"
+#            from android.permissions import request_permissions, Permission
+#            request_permissions([Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE])
 
 
 
