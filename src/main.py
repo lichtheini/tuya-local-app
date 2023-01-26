@@ -48,7 +48,7 @@ Screen:
     MDLabel:
         text: ''
         id: show
-        pos_hint: {'center_x': 1.0, 'center_y': 0.1}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.1}
 """
 
 
@@ -84,8 +84,9 @@ class Main(MDApp):
         if platform == "android":
             label = self.root.ids.show
             label.text = "detected android"
-#            from android.permissions import request_permissions, Permission
-#            request_permissions([Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE])
+            from android.permissions import request_permissions, Permission
+            request_permissions([Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE])
+            label.text = "permission requested"
 
 
 
