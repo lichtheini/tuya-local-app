@@ -22,7 +22,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          name: package
+          name: manifest
           path: /github/workspace/src/.buildozer/android/platform/build-armeabi-v7a/dists/authapp/src/main/AndroidManifest.xml
 
       - name: Upload artifacts
