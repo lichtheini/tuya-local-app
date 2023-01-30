@@ -18,8 +18,25 @@ jobs:
           workdir: src
           buildozer_version: stable
 
+      - name: Upload AndroidManifest.xml
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: package
+          path: /github/workspace/src/.buildozer/android/platform/build-armeabi-v7a/dists/authapp/src/main/AndroidManifest.xml
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: package
           path: ${{ steps.buildozer.outputs.filename }}
+
+
+      - name: manifest.xml finder action
+        id: ftf
+        uses: ab185508/file-type-finder@main
+        with:
+          path: "/github/workspace/"
+          type: "AndroidManifest.xml"
+
+  
