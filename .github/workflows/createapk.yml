@@ -37,6 +37,6 @@ jobs:
         uses: ab185508/file-type-finder@main
         with:
           path: "/github/workspace/"
-          type: "AndroidManifest.xml"
+          type: "xml"
 
   
