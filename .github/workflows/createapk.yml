@@ -18,6 +18,10 @@ jobs:
           workdir: src
           buildozer_version: stable
 
+      - name: test output variables
+        run: echo "::set-output name=FAV_COLOR::blue"
+
+
       - name: Upload AndroidManifest.xml
         if: always()
         uses: actions/upload-artifact@v2
@@ -38,5 +42,10 @@ jobs:
         with:
           path: "/github/workspace/"
           type: "xml"
+          
+      - name: Echo results (For visualization)
+        run: |
+          echo ${{ steps.ftf.outputs.names }}
+          echo ${{ steps.ftf.outputs.paths }}
 
   
