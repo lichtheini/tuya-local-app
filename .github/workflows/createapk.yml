@@ -21,18 +21,16 @@ jobs:
       - name: test output variables
         run: echo "::set-output name=FAV_COLOR::blue"
 
+      - name: upload src after building
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-src
+          path: /github/workspace/src/.buildozer/android/platform/build-armeabi-v7a/dists/authapp/
 
-      - name: Upload AndroidManifest.xml
-        if: always()
+      - name: Upload artifacts apk
         uses: actions/upload-artifact@v2
         with:
-          name: manifest
-          path: /github/workspace/src/.buildozer/android/platform/build-armeabi-v7a/dists/authapp/src/main/AndroidManifest.xml
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: package
+          name: app-package
           path: ${{ steps.buildozer.outputs.filename }}
 
 
@@ -45,7 +43,6 @@ jobs:
           
       - name: Echo results (For visualization)
         run: |
-          echo ${{ steps.ftf.outputs.names }}
           echo ${{ steps.ftf.outputs.paths }}
 
   
