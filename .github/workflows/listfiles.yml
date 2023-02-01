@@ -1,0 +1,22 @@
+name: listfiles after checkout
+on: workflow_dispatch
+
+jobs:
+  # Build job. Builds app for Android with Buildozer
+  list-files:
+    name: listfiles after checkout
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: list files root
+        run: |
+            echo "::warning::this is a warning"
+            find / -maxdepth 3 -type d
+    
+      - name: list files root
+        run: |
+            echo "::warning::this is a 2nd warning"
+            find . -maxdepth 3 -type d
