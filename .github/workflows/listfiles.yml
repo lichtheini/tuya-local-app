@@ -12,11 +12,19 @@ jobs:
         uses: actions/checkout@v2
 
       - name: list files root
+        if: ${{ always() }}
         run: |
             echo "::warning::this is a warning"
             find / -maxdepth 3 -type d
     
-      - name: list files root
+      - name: list files cwd
+        if: ${{ always() }}
         run: |
             echo "::warning::this is a 2nd warning"
             find . -maxdepth 3 -type d
+
+      - name: list files home
+        if: ${{ always() }}
+        run: |
+            echo "::warning::this is a 3nd warning"
+            find /home/runner/ -maxdepth 3 -type d
