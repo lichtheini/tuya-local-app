@@ -11,20 +11,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: list files root
+      - name: list dirs github workspace
         if: ${{ always() }}
         run: |
             echo "::warning::this is a warning"
-            find / -maxdepth 3 -type d
+            find /github/workspace/ -maxdepth 3 -type d
     
       - name: list files cwd
         if: ${{ always() }}
         run: |
             echo "::warning::this is a 2nd warning"
-            find . -maxdepth 3 -type d
+            find . -maxdepth 3
 
-      - name: list files home
+      - name: list dirs runner home
         if: ${{ always() }}
         run: |
             echo "::warning::this is a 3nd warning"
-            find /home/runner/ -maxdepth 3 -type d
+            echo "cwd is $GITHUB_WORKSPACE"
+            find $GITHUB_WORKSPACE -maxdepth 3 -type d
