@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app-src
-          path: $GITHUB_WORKSPACE/src/.buildozer/android/platform/build-armeabi-v7a/dists/authapp/
+          path:  ${{ github.workspace }}/src/.buildozer/android/platform/build-armeabi-v7a/dists/authapp/
 
       - name: Upload artifacts apk
         uses: actions/upload-artifact@v2
