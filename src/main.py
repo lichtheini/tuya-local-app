@@ -69,6 +69,7 @@ class Main(MDApp):
     def setup(self):
         label = self.root.ids.show
         label.text = "loading tinytuya"
+        import tinytuya
 
         label.text = "create device"
 #        d = SocketDevice("bf6823916bed4f2286tyne", "192.168.178.34", "dcacc24203cb84d0")
