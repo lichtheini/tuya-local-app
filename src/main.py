@@ -7,7 +7,7 @@ from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 
 
-import tinytuya
+#import tinytuya
 #from tinytuya.Contrib import SocketDevice
 
 import os
