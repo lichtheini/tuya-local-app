@@ -89,6 +89,141 @@ class Main(MDApp):
             request_permissions([Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE])
             label.text = "permission requested"
 
+        try:
+            import warnings
+        except ImportError as error:
+            print(error)
+            print(f'error.name: {error.name}')
+            print(f'error.path: {error.path}')
+
+        try:
+            import base64
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import certifi
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+
+        try:
+            import chardet
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+
+        try:
+            import codecs
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import collections
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import colorama
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import contextlib
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import hashlib
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import hmac
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import idna
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import json
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import logging
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import requests
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import select
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import socket
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import urllib3
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import zipfile
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+
+        try:
+            import tinytuya
+        except ImportError as error:
+            warnings.warn(error)
+            warnings.warn(f'error.name: {error.name}')
+            warnings.warn(f'error.path: {error.path}')
+        
 
 
 
