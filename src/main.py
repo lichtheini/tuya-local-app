@@ -69,16 +69,15 @@ class Main(MDApp):
     def setup(self):
         label = self.root.ids.show
         label.text = "loading tinytuya"
-        import tinytuya
 
         label.text = "create device"
-#        d = SocketDevice("bf6823916bed4f2286tyne", "192.168.178.34", "dcacc24203cb84d0")
-#        d.set_version(3.4)
+        d = SocketDevice("bf6823916bed4f2286tyne", "192.168.178.34", "dcacc24203cb84d0")
+        d.set_version(3.4)
         
-#        label.text = "update status"
-#        d.status()
+        label.text = "update status"
+        d.status()
 
-#        label.text = "Status: " + str(d.get_state()['on'])
+        label.text = "Status: " + str(d.get_state()['on'])
 
     def on_start(self):
         from kivy import platform
@@ -219,6 +218,7 @@ class Main(MDApp):
 
         try:
             import tinytuya
+            from tinytuya.Contrib import SocketDevice
         except ImportError as error:
             warnings.warn(error)
             warnings.warn(f'error.name: {error.name}')
