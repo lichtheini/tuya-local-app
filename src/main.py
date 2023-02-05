@@ -7,8 +7,8 @@ from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 
 
-#import tinytuya
-#from tinytuya.Contrib import SocketDevice
+import tinytuya
+from tinytuya.Contrib import SocketDevice
 
 import os
 
@@ -215,16 +215,5 @@ class Main(MDApp):
             warnings.warn(error)
             warnings.warn(f'error.name: {error.name}')
             warnings.warn(f'error.path: {error.path}')
-
-        try:
-            import tinytuya
-            from tinytuya.Contrib import SocketDevice
-        except ImportError as error:
-            warnings.warn(error)
-            warnings.warn(f'error.name: {error.name}')
-            warnings.warn(f'error.path: {error.path}')
-        
-
-
 
 Main().run()
