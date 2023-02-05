@@ -75,9 +75,16 @@ class Main(MDApp):
         d.set_version(3.4)
         
         label.text = "update status"
-        d.status()
+        d.status()        
+        switch_state = d.get_state()['on']
 
-        label.text = "Status: " + str(d.get_state()['on'])
+        d.set_status(not switch_state)
+
+        label.text = "update status"
+        d.status()
+        switch_state = d.get_state()['on']
+
+        label.text = "Status: " + str(switch_state)
 
     def on_start(self):
         from kivy import platform
