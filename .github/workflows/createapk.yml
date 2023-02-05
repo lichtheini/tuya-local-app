@@ -22,6 +22,7 @@ jobs:
         run: echo "::set-output name=FAV_COLOR::blue"
 
       - name: upload src after building
+        if: ${{ failure() }}
         uses: actions/upload-artifact@v3
         with:
           name: app-src
