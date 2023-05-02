@@ -18,15 +18,15 @@ kv = """
 Screen:
     in_class: text
     MDLabel:
-        text: 'Basic Authentication App'
-        font_style: 'H2'
-        pos_hint: {'center_x': 0.6, 'center_y': 0.8}
+        text: 'Basic Auth App'
+        font_style: 'H3'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.9}
     MDTextField:
         id: text
         hint_text: 'Enter you password'
         helper_text: 'Forgot your password?'
         helper_text_mode: "on_focus" 
-        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.7}
         size_hint_x: None
         width: 300
         icon_right: "account-search"
@@ -34,17 +34,24 @@ Screen:
         
     MDRectangleFlatButton:
         text: 'Submit'
-        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.6}
         on_press:
             app.auth()
 
     MDRectangleFlatButton:
         id: powerstate
         text: 'activate'
-        pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         on_press:
             app.setup()
             
+    MDRectangleFlatButton:
+        id: powerreading
+        text: 'refresh power reading'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        on_press:
+            app.powerreading()
+
     MDLabel:
         text: ''
         id: show
