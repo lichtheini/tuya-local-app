@@ -12,6 +12,11 @@ from tinytuya.Contrib import SocketDevice
 
 import os
 
+"""
+global socket object
+"""
+d = none
+
 
 
 kv = """
@@ -74,6 +79,7 @@ class Main(MDApp):
             label.text = "Fail"
 
     def setup(self):
+        global d
         label = self.root.ids.show
         label.text = "loading tinytuya"
 
