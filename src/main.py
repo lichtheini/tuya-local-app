@@ -15,7 +15,7 @@ import os
 """
 global socket object
 """
-d = none
+d = None
 
 
 
@@ -98,6 +98,18 @@ class Main(MDApp):
         switch_state = d.get_state()['on']
 
         label.text = "Status: " + str(switch_state)
+
+    def powerreading(self):
+        global d
+        if d is not None:
+            label = self.root.ids.powerreading
+            label.text = "update status"
+
+            payload = d.generate_payload(tinytuya.UPDATEDPS)
+            d.send(payload)
+            d.status()    
+
+            label.text = d.get_power()['power_fmt']
 
     def on_start(self):
         from kivy import platform
